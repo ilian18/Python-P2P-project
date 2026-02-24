@@ -23,12 +23,12 @@ A robust, decentralized file-sharing application built from scratch in Python. T
 ### 1. Clone the repository
 ```bash
 git clone [https://github.com/ilian18/Python-P2P-project.git](https://github.com/ilian18/Python-P2P-project.git)
-cd Python-P2P-project
+cd Python-P2P-project```
 
 ### 2. Run the Node
 
 ```bash
-python main.py
+python main.py```
 
 ### 3. How to use
 

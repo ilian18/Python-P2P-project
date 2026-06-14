@@ -1,4 +1,4 @@
-# 🌐 Decentralized P2P File Sharing System
+#  Decentralized P2P File Sharing System
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat&logo=python)
 ![Networking](https://img.shields.io/badge/Networking-TCP%2FSockets-green)
@@ -6,7 +6,7 @@
 
 A robust, decentralized file-sharing application built from scratch in Python. This project implements a **Gossip Protocol** for resource discovery and handles binary file transfer via **TCP Sockets**.
 
-## 🚀 Key Features
+##  Key Features
 
 * **Decentralized Architecture:** No central server; every node acts as both client and server.
 * **Gossip Protocol (Flooding):** Efficient resource discovery with TTL (Time-To-Live) management to prevent network congestion.
@@ -14,7 +14,7 @@ A robust, decentralized file-sharing application built from scratch in Python. T
 * **Multi-threading:** Non-blocking interface allowing simultaneous uploads, downloads, and user interaction.
 * **Resilience:** Custom JSON-based protocol for peer communication (`SEARCH`, `FOUND`, `GET_CHUNK`).
 
-## 🛠️ Installation & Usage
+##  Installation & Usage
 
 ### Prerequisites
 * Python 3.x
@@ -45,7 +45,7 @@ python main.py
     └── protocol.py      # JSON message definitions
 main.py                  # Entry point & CLI Interface
 
-## 🧠 Technical Highlights for Engineers
+##  Technical Highlights for Engineers
 
 * **Socket Programming:** Direct manipulation of TCP sockets for low-level control over data streams.
 * **Concurrency:** Implementation of threading.Thread with Daemon mode to handle background server listening.

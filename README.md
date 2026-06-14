@@ -37,7 +37,7 @@ python main.py
 3. Place files to share in the shared_files/ directory.
 4. **Search & Download** using option 3.
 
-##📂 Project Structure
+## 📂 Project Structure
 
 /src
     ├── node.py          # Network logic (Server/Client/Gossip)

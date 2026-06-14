@@ -4,7 +4,7 @@ import json
 import struct
 import time
 from src.file_manager import FileManager
-from src.protocol import P2PProtocol  # <--- On importe le protocole ici
+from src.protocol import P2PProtocol 
 
 PORT = 5001
 

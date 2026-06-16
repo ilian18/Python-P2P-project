@@ -44,6 +44,7 @@ python main.py
 ## 📂 Project Structure
 
 /src
+
 ├── node.py # Network logic (Server/Client/Gossip)
 
 ├── file_manager.py # Disk I/O & Chunking logic

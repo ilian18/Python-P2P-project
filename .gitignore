@@ -1,0 +1,20 @@
+# --- Virtual environment ---
+.venv/
+venv/
+ENV/
+env/
+
+# --- Python caches ---
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Environment Files ---
+.env
+.env.local
+
+# --- System and Editors Files ---
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

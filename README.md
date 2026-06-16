@@ -45,8 +45,11 @@ python main.py
 
 /src
 ├── node.py # Network logic (Server/Client/Gossip)
+
 ├── file_manager.py # Disk I/O & Chunking logic
+
 └── protocol.py # JSON message definitions
+
 main.py # Entry point & CLI Interface
 
 ## Technical Highlights for Engineers

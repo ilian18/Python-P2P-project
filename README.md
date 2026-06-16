@@ -1,4 +1,4 @@
-#  Decentralized P2P File Sharing System
+# Decentralized P2P File Sharing System
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat&logo=python)
 ![Networking](https://img.shields.io/badge/Networking-TCP%2FSockets-green)
@@ -6,21 +6,23 @@
 
 A robust, decentralized file-sharing application built from scratch in Python. This project implements a **Gossip Protocol** for resource discovery and handles binary file transfer via **TCP Sockets**.
 
-##  Key Features
+## Key Features
 
-* **Decentralized Architecture:** No central server; every node acts as both client and server.
-* **Gossip Protocol (Flooding):** Efficient resource discovery with TTL (Time-To-Live) management to prevent network congestion.
-* **Binary Chunking:** Large files are split into 1MB chunks for reliable transmission and memory optimization.
-* **Multi-threading:** Non-blocking interface allowing simultaneous uploads, downloads, and user interaction.
-* **Resilience:** Custom JSON-based protocol for peer communication (`SEARCH`, `FOUND`, `GET_CHUNK`).
+- **Decentralized Architecture:** No central server; every node acts as both client and server.
+- **Gossip Protocol (Flooding):** Efficient resource discovery with TTL (Time-To-Live) management to prevent network congestion.
+- **Binary Chunking:** Large files are split into 1MB chunks for reliable transmission and memory optimization.
+- **Multi-threading:** Non-blocking interface allowing simultaneous uploads, downloads, and user interaction.
+- **Resilience:** Custom JSON-based protocol for peer communication (`SEARCH`, `FOUND`, `GET_CHUNK`).
 
-##  Installation & Usage
+## Installation & Usage
 
 ### Prerequisites
-* Python 3.x
-* No external dependencies required (uses standard library).
+
+- Python 3.x
+- Require uuid (uses other standard library).
 
 ### 1. Clone the repository
+
 bash
 git clone [https://github.com/ilian18/Python-P2P-project.git](https://github.com/ilian18/Python-P2P-project.git)
 cd Python-P2P-project
@@ -40,16 +42,16 @@ python main.py
 ## 📂 Project Structure
 
 /src
-    ├── node.py          # Network logic (Server/Client/Gossip)
-    ├── file_manager.py  # Disk I/O & Chunking logic
-    └── protocol.py      # JSON message definitions
-main.py                  # Entry point & CLI Interface
+├── node.py # Network logic (Server/Client/Gossip)
+├── file_manager.py # Disk I/O & Chunking logic
+└── protocol.py # JSON message definitions
+main.py # Entry point & CLI Interface
 
-##  Technical Highlights for Engineers
+## Technical Highlights for Engineers
 
-* **Socket Programming:** Direct manipulation of TCP sockets for low-level control over data streams.
-* **Concurrency:** Implementation of threading.Thread with Daemon mode to handle background server listening.
-* **Scalability:** Scalability: The gossip protocol is designed to scale with the number of nodes, using a known_messages set to avoid infinite loops.
+- **Socket Programming:** Direct manipulation of TCP sockets for low-level control over data streams.
+- **Concurrency:** Implementation of threading.Thread with Daemon mode to handle background server listening.
+- **Scalability:** Scalability: The gossip protocol is designed to scale with the number of nodes, using a known_messages set to avoid infinite loops.
 
 ---
 

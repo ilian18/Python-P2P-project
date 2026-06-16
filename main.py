@@ -1,57 +1,60 @@
-
 import threading
 import time
 from src.node import P2PNode
 
-def main():
-    # Instanciation du noeud
-    node = P2PNode()
+def main() -> None:
+    """Main entry point for the P2P application.
     
-    # Lancement du serveur en arrière-plan (Daemon thread)
-    # Le daemon permet au serveur de s'arrêter quand on quitte le programme
-    server_thread = threading.Thread(target=node.start_server, daemon=True)
+    Initializes the node, starts the background server, and runs the CLI loop.
+    """
+    # Node instantiation
+    p2p_node = P2PNode()
+    
+    # Launching the server in the background (Daemon thread)
+    # Daemon ensures the server thread stops when the main program exits
+    server_thread = threading.Thread(target=p2p_node.start_server, daemon=True)
     server_thread.start()
     
-    # Petite pause pour laisser le serveur démarrer
+    # Brief pause to allow the server socket to bind properly
     time.sleep(0.5)
 
     print("\n=== P2P DISTRIBUTED SYSTEM ===")
-    print(f"Mon IP : {node.my_ip}")
-    print("Fichiers à partager : Placez-les dans 'shared_files'")
+    print(f"My IP: {p2p_node.local_ip}")
+    print("Files to share: Place them in the 'shared_files' directory")
     print("---------------------------------------------------")
 
     while True:
-        print("\n1. Ajouter un Pair (IP)")
-        print("2. Voir la liste des Pairs")
-        print("3. Rechercher & Télécharger")
-        print("4. Quitter")
+        print("\n1. Add a Peer (IP)")
+        print("2. View Peer List")
+        print("3. Search & Download")
+        print("4. Exit")
         
         try:
-            choix = input("Votre choix > ")
+            user_choice = input("Your choice > ")
         except KeyboardInterrupt:
             break
 
-        if choix == "1":
-            ip = input("Entrez l'IP du pair : ")
-            node.add_peer(ip)
+        if user_choice == "1":
+            target_ip = input("Enter the peer's IP address: ")
+            p2p_node.add_peer(target_ip)
         
-        elif choix == "2":
-            print(f"Pairs connectés : {node.peers}")
+        elif user_choice == "2":
+            print(f"Connected peers: {p2p_node.peers}")
         
-        elif choix == "3":
-            fname = input("Nom du fichier (ex: video.mp4) : ")
-            sources = node.broadcast_search(fname)
+        elif user_choice == "3":
+            filename = input("Filename (e.g., video.mp4): ")
+            available_sources = p2p_node.broadcast_search(filename)
             
-            if not sources:
-                print("Aucun résultat sur le réseau.")
+            if not available_sources:
+                print("No results found on the network.")
             else:
-                print(f"Trouvé chez : {sources}")
-                # Pour l'instant, on télécharge depuis le premier trouvé
-                target = sources[0]
-                node.download_file(fname, target)
+                print(f"Found at: {available_sources}")
+                # For now, default to downloading from the first available source
+                target_node = available_sources[0]
+                p2p_node.download_file(filename, target_node)
                 
-        elif choix == "4":
-            print("Arrêt du noeud...")
+        elif user_choice == "4":
+            print("Shutting down the node...")
             break
 
 if __name__ == "__main__":

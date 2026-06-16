@@ -29,8 +29,8 @@ cd Python-P2P-project
 
 ### 2. Run the Node
 
-bash
-python main.py
+`bash
+python main.py`
 
 ### 3. How to use
 
